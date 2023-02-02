@@ -14,9 +14,9 @@ RUN cargo install cargo-auditable && \
 
 FROM docker.io/library/debian:bullseye-slim
 
-RUN apt-get update \
-    && apt-get install -y ca-certificates tzdata sqlite3 libc6 \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y ca-certificates tzdata sqlite3 libc6 && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
