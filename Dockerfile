@@ -24,4 +24,4 @@ COPY --from=builder /nostr-rs-relay/target/release/nostr-rs-relay /app/nostr-rs-
 
 ENV RUST_LOG=info,nostr_rs_relay=info
 
-ENTRYPOINT ["/app/nostr-rs-relay"]
+ENTRYPOINT ["/app/nostr-rs-relay", "--db", "/app/db"]
