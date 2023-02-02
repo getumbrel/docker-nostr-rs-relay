@@ -9,8 +9,8 @@ RUN git clone --depth 1 --branch "${VERSION}" https://github.com/scsibug/nostr-r
 WORKDIR /nostr-rs-relay
 
 RUN cargo install cargo-auditable && \
-	cargo new --bin nostr-rs-relay && \
-	cargo auditable build --release --locked
+    cargo new --bin nostr-rs-relay && \
+    cargo auditable build --release --locked
 
 FROM docker.io/library/debian:bullseye-slim
 
