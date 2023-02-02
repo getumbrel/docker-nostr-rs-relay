@@ -18,6 +18,8 @@ RUN apt-get update \
     && apt-get install -y ca-certificates tzdata sqlite3 libc6 \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /app
+
 COPY --from=builder /nostr-rs-relay/target/release/nostr-rs-relay /app/nostr-rs-relay
 
 ENV RUST_LOG=info,nostr_rs_relay=info
